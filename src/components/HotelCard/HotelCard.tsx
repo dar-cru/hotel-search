@@ -1,6 +1,6 @@
 import { CancellationType, Offer, Property } from '../../types';
 import ImageTextOverlap from '../ImageTextOverlap';
-import Rating from '../Rating/Rating';
+import Rating from '../Rating';
 import {
   Divider,
   HeadingText,
@@ -21,6 +21,7 @@ type HotelCardProps = {
 const HotelCard = ({ property, offer }: HotelCardProps) => {
   const { title, address, previewImage, rating } = property;
   const { promotion, name: offerName, cancellationOption, displayPrice, savings } = offer;
+
   return (
     <FlexContainer direction="row" style={{ paddingBottom: '5px' }}>
       <ImageTextOverlap url={previewImage.url} imgDesc={previewImage.caption} text={promotion.title} />
@@ -35,19 +36,21 @@ const HotelCard = ({ property, offer }: HotelCardProps) => {
 
         <FlexContainer direction="row" style={{ minHeight: '116px' }}>
           <FlexContainer direction="column" style={{ maxHeight: '70px', paddingTop: '4px', width: '50%' }}>
-            <GreyInfoText>{address.join(', ')}</GreyInfoText>
+            <GreyInfoText data-testid="hotel-address-text">{address?.join(', ')}</GreyInfoText>
             <RoomOfferText>{offerName}</RoomOfferText>
           </FlexContainer>
 
           <FlexContainer direction="column" style={{ alignItems: 'flex-end', paddingTop: '28px', width: '50%' }}>
-            <GreyInfoText>1 night total ({displayPrice.currency?.toUpperCase()})</GreyInfoText>
-            <CurrencyText>{displayPrice.amount}</CurrencyText>
-            {savings && <SavingsText>Save ${savings.amount}</SavingsText>}
+            <GreyInfoText data-testid="hotel-night-total-text">
+              1 night total ({displayPrice.currency?.toUpperCase()})
+            </GreyInfoText>
+            <CurrencyText data-testid="hotel-price-text">{Math.round(displayPrice.amount)}</CurrencyText>
+            {savings && <SavingsText data-testid="hotel-savings-text">Save ${Math.round(savings.amount)}</SavingsText>}
           </FlexContainer>
         </FlexContainer>
 
         {cancellationOption?.cancellationType === CancellationType.FREE_CANCELLATION && (
-          <CancellationTypeText>Free Cancellation</CancellationTypeText>
+          <CancellationTypeText data-testid="hotel-free-cancellation">Free Cancellation</CancellationTypeText>
         )}
       </div>
     </FlexContainer>

@@ -63,8 +63,8 @@ const App = () => {
         </div>
         <div style={{ padding: '10px', width: '50%', justifyContent: 'flex-end', display: 'flex' }}>
           Sort by:
-          <select onChange={onHotelsSort}>
-            <option value="default" selected={true} disabled={true} hidden={true}>
+          <select defaultValue="default" onChange={onHotelsSort}>
+            <option value="default" disabled={true} hidden={true}>
               Default
             </option>
             <option value={SortValues.PRICE_LOW_TO_HIGH}>Price low-high</option>
