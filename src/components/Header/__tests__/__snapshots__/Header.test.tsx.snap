@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders with the header logo 1`] = `
+<div>
+  <header
+    style="padding: 20px 0px;"
+  >
+    <img
+      alt="Qantas logo"
+      src="qantas-logo.png"
+      width="200px"
+    />
+  </header>
+</div>
+`;
