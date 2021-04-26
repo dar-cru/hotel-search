@@ -23,14 +23,14 @@ const HotelCard = ({ property, offer }: HotelCardProps) => {
   const { promotion, name: offerName, cancellationOption, displayPrice, savings } = offer;
 
   return (
-    <FlexContainer direction="row" style={{ paddingBottom: '5px' }}>
+    <FlexContainer data-testid="hotel-card-item" direction="row" style={{ paddingBottom: '5px' }}>
       <ImageTextOverlap url={previewImage.url} imgDesc={previewImage.caption} text={promotion.title} />
 
       <div style={{ width: '100%', padding: '0 10px' }}>
         <Divider />
 
         <TitleHeaderContainer>
-          <HeadingText>{title}</HeadingText>
+          <HeadingText data-testid="hotel-name">{title}</HeadingText>
           <Rating {...rating} />
         </TitleHeaderContainer>
 

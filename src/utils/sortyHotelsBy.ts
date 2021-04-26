@@ -1,15 +1,27 @@
 import { Hotel } from '../types/hotel';
 
-export enum SortOrder {
+enum SortOrder {
   ASCENDING,
   DESCENDING
 }
 
-export enum SortCategory {
+enum SortCategory {
   DISPLAY_PRICE
 }
 
-export const sortHotelsBy = (hotels: Hotel[], category: SortCategory, order: SortOrder) => {
+export enum SortValues {
+  PRICE_HIGH_TO_LOW = 'PRICE_HIGH_LOW',
+  PRICE_LOW_TO_HIGH = 'PRICE_LOW_HIGH'
+}
+
+export const sortHotelsBy = (hotels: Hotel[], sortValue: SortValues) => {
+  let order: SortOrder = SortOrder.ASCENDING;
+  const category: SortCategory = SortCategory.DISPLAY_PRICE;
+
+  if (sortValue === SortValues.PRICE_HIGH_TO_LOW) {
+    order = SortOrder.DESCENDING;
+  }
+
   return hotels.sort((hotel1, hotel2) => {
     const obj1 = order === SortOrder.ASCENDING ? hotel1 : hotel2;
     const obj2 = order === SortOrder.ASCENDING ? hotel2 : hotel1;
