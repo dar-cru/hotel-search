@@ -23,6 +23,7 @@ Due to the limited time allocated to the coding test, there are certain trade-of
 * _Global State Management_: Due to the scope of the feature, it currently does not require a global state management tool (e.g. Redux), hence, a decision was made to only use a tool (axios) on an as-needed basis.
 
 ### Trade-Offs
+* _Loading State_: When the images and hotels data are still being fetched, there is currently no loading mechanism implemented
 * _Non-functional Requirements_: There was very little focus put on accessibility due to time constraints
 * _Mobile Responsiveness_: Mobile devices are currently not catered to because of time constraints, I would otherwise do a mobile-first approach
 * _Unit Testing_: Quality of tests surrounding connected containers could still be improved
