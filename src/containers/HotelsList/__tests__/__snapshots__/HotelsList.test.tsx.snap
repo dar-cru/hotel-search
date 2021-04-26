@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hotel Card component renders with the correct values through props 1`] = `
+exports[`HotelsList container renders the hotels list in the order of API response 1`] = `
 .c1 {
   position: relative;
   width: 242px;
@@ -40,6 +40,24 @@ exports[`Hotel Card component renders with the correct values through props 1`] 
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background: linear-gradient(90deg,gold 90%,grey 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.c13 {
+  display: inline-block;
+  font-size: 1rem;
+  font-family: Times;
+  line-height: 1;
+}
+
+.c13:before {
+  content: '★★★★★';
+  -webkit-letter-spacing: 3px;
+  -moz-letter-spacing: 3px;
+  -ms-letter-spacing: 3px;
+  letter-spacing: 3px;
   background: linear-gradient(90deg,gold 100%,grey 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -140,7 +158,7 @@ exports[`Hotel Card component renders with the correct values through props 1`] 
   padding-left: 1px;
 }
 
-.c13 {
+.c14 {
   position: absolute;
   margin: 0;
   bottom: 8px;
@@ -149,6 +167,150 @@ exports[`Hotel Card component renders with the correct values through props 1`] 
 }
 
 <div>
+  <div
+    style="display: flex;"
+  >
+    <div
+      data-testid="hotel-results-summary"
+      style="padding: 10px; width: 50%;"
+    >
+      <b>
+        2
+      </b>
+       
+      <i>
+        hotels in
+      </i>
+       
+      <b>
+        Sydney
+      </b>
+    </div>
+    <div
+      style="padding: 10px; width: 50%; justify-content: flex-end; display: flex;"
+    >
+      <p
+        style="margin: 0px; padding-right: 4px;"
+      >
+        Sort by
+      </p>
+      <select
+        data-testid="hotel-sort-selector"
+      >
+        <option
+          disabled=""
+          hidden=""
+          selected=""
+          value="default"
+        >
+          Default
+        </option>
+        <option
+          data-testid="PRICE_LOW_HIGH"
+          value="PRICE_LOW_HIGH"
+        >
+          Price low-high
+        </option>
+        <option
+          data-testid="PRICE_HIGH_LOW"
+          value="PRICE_HIGH_LOW"
+        >
+          Price high-low
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    class="c0"
+    data-testid="hotel-card-item"
+    direction="row"
+    style="padding-bottom: 5px;"
+  >
+    <div
+      class="c1"
+    >
+      <img
+        alt="Image of Courtyard by Marriott Sydney-North Ryde"
+        class="c2"
+        src="https://unsplash.it/145/125/?random"
+      />
+      <p
+        class="c3"
+      >
+        Exclusive Deal
+      </p>
+    </div>
+    <div
+      style="width: 100%; padding: 0px 10px;"
+    >
+      <hr
+        class="c4"
+      />
+      <div
+        class="c5"
+      >
+        <h2
+          class="c6"
+          data-testid="hotel-name"
+        >
+          Courtyard by Marriott Sydney-North Ryde
+        </h2>
+        <div
+          class="c7"
+        />
+      </div>
+      <div
+        class="c0"
+        direction="row"
+        style="min-height: 116px;"
+      >
+        <div
+          class="c8"
+          direction="column"
+          style="max-height: 70px; padding-top: 4px; width: 50%;"
+        >
+          <p
+            class="c9"
+            data-testid="hotel-address-text"
+          >
+            7-11 Talavera Rd, North Ryde
+          </p>
+          <p
+            class="c10"
+          >
+            Deluxe Balcony Room
+          </p>
+        </div>
+        <div
+          class="c8"
+          direction="column"
+          style="align-items: flex-end; padding-top: 28px; width: 50%;"
+        >
+          <p
+            class="c9"
+            data-testid="hotel-night-total-text"
+          >
+            1 night total (
+            AUD
+            )
+          </p>
+          <p
+            class="c11"
+            data-testid="hotel-price-text"
+          >
+            329
+          </p>
+          <p
+            class="c12"
+            data-testid="hotel-savings-text"
+          >
+            Save $
+            30
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     class="c0"
     data-testid="hotel-card-item"
@@ -161,7 +323,7 @@ exports[`Hotel Card component renders with the correct values through props 1`] 
       <img
         alt="Image of Primus Hotel Sydney"
         class="c2"
-        src="https://mockUrl.com"
+        src="https://unsplash.it/145/126/?random"
       />
       <p
         class="c3"
@@ -185,7 +347,7 @@ exports[`Hotel Card component renders with the correct values through props 1`] 
           Primus Hotel Sydney
         </h2>
         <div
-          class="c7"
+          class="c13"
         />
       </div>
       <div
@@ -239,7 +401,7 @@ exports[`Hotel Card component renders with the correct values through props 1`] 
         </div>
       </div>
       <p
-        class="c13"
+        class="c14"
         data-testid="hotel-free-cancellation"
       >
         Free Cancellation
